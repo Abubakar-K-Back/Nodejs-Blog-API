@@ -1,0 +1,44 @@
+<body style="
+  height: 80vh;
+background-image: url('../../assets/123.png');
+
+"
+
+>
+    <div class="card " style="background-image: url('../../assets/123.png');"  >
+
+      <form class="container" [formGroup]="signupForm">
+      <div class="row">
+            <div class="col-md-6 " >
+                <h1 class="text-center pt-5"> Sign Up</h1>
+
+                <h4 class="label control-label  pt-5"> Username:</h4>
+
+                <div class="input-group form-group">
+                  <input formControlName="name" #name  type="text" width="10" class="form-control text-center w-10"  placeholder="Username">
+               </div>
+
+               <h4 class="label control-label  pt-5">Email:</h4>
+                <div class="input-group form-group">
+                    <input formControlName="email" #email type="text" width="10" class="form-control text-center w-10"  placeholder="E-mail">
+                </div>
+
+               <h4 class="label control-label  pt-5"> Password*</h4>
+               <div class="input-group form-group">
+                <input formControlName="password" type="password" width="10" #password class="form-control  text-center w-10" placeholder="Password Must be of 8 Characters">
+               </div >
+               <button type="button" class="btn btn-success mt-3" (click)="addnewuser()"  >Create Account</button>
+              </div>
+        </div>
+
+
+        <div class="alert alert-danger mt-3" style="width: 25rem;" *ngIf="ishown">
+          {{ErrorMsg}}
+        </div>
+
+
+
+      </form>
+      </div>
+</body>
+<router-outlet></router-outlet>

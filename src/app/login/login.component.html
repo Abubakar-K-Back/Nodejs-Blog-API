@@ -1,0 +1,32 @@
+<body>
+  <div class="card visible" *ngIf="MyLoginForm" >
+    <form class="container"  [formGroup]="loginform">
+      <div class="alert alert-success mt-3 mb-3" style="width: 25rem;" *ngIf="ishowntrue">
+        {{ErrorMsgs}}
+      </div>
+
+    <div class="row">
+          <div class="col-md-6 " >
+              <h1 class="text-center pt-5"> Sign in</h1>
+
+             <h4 class="label control-label  pt-5" >Username</h4>
+              <div class="input-group form-group">
+                  <input  id="username"  formControlName="name"  type="text" width="10" class="form-control text-center w-10"  placeholder="username">
+                </div>
+
+             <h4 class="label control-label  pt-5"> Password*</h4>
+             <div class="input-group form-group">
+              <input  id="password"  formControlName="password" type="password" width="10" #password class="form-control  text-center w-10" placeholder="Password">
+
+             </div>
+             <button type="submit" value="Submit" class="btn btn-success mt-2" (click)="logins()">Sign In</button>
+            </div>
+      </div >
+<div class="alert alert-danger mt-3" style="width: 25rem;" *ngIf="ishown">
+  {{ErrorMsg}}
+</div>
+
+    </form>
+    </div>
+</body>
+<router-outlet></router-outlet>
